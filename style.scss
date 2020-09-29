@@ -161,3 +161,220 @@ html{
     top: 75%;
     transform: translateX(-70%);
 }
+
+.for-buttons{
+    display: none;
+}
+
+// MAP START 
+
+$tooltip-color: #333;
+$arrow-size: 10px;
+$translate-y: -100%;
+
+.map-layout-container{
+    display: grid;
+    grid-template-columns:1.5fr 1fr;
+    padding-top: 10rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.map-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+    max-width: 700px;
+    
+    background-color: rgb(0, 0, 0);
+}
+
+.map-wrapper{
+    display: flex;
+    color: #22001c;
+    justify-content: center;
+    width: 700px;
+    position: relative;
+    // background: #042848;
+  
+    img{
+        
+        // height: 90vh;
+        height: 480px;
+        width: 700px;
+    }
+
+    .map-image{
+        font-size: 1.6rem;
+        background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226534/dehradun_2_orsp7b.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 90px;
+        width: 95px;
+        background-color: black;
+        opacity: 1;
+        position: absolute;
+        border-radius: 1rem;
+
+        // &.loc-dehradun{
+
+        //     top: 42px;
+        //     left: 142px;
+        // }
+
+        // &.loc-noida{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226299/delhi_1_dbjy1r.jpg");
+        //     top: 24px;
+        //     left: 537px;
+        // }
+
+        // &.loc-indore{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 62px;
+        //     left: 650px;
+        // }
+
+        // &.loc-pune{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 122px;
+        //     left: 905px;
+        // }
+
+        // &.loc-mumbai{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 280px;
+        //     left: 800px;
+        // }
+
+        // &.loc-hyderabad{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 380px;
+        //     left: 900px;
+        // }
+
+        // &.loc-chennai{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 400px;
+        //     left: 655px;
+        // }
+
+        // &.loc-bangalore{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 500px;
+        //     left: 527px;
+        // }
+
+        // &.loc-ahmedabad{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 460px;
+        //     left: 136px;
+        // }
+        // &.loc-kota{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 360px;
+        //     left: 1px;
+        // }
+        // &.loc-gurgaon{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 270px;
+        //     left: 108px;
+        // }
+        // &.loc-delhi{
+        //     background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+        //     top: 145px;
+        //     left: 26px;
+        // }
+
+
+        &::before, &::after{
+            $scale: 0;
+            position: absolute;
+            top: -.25rem;
+            left: 50%;
+            transform: translateX(-50%) translateY($translate-y) scale($scale);
+            transition: 200ms transform;
+            transform-origin: bottom center;
+            
+            }
+      
+      
+            &::before {
+              $translate-y: -100% ;
+              content: attr(data-tooltip);
+              color: white;
+              padding: .5rem;
+              border-radius: .3rem;
+              background: $tooltip-color;
+              width: max-content;
+            }
+            
+           &:hover::before{
+             $scale: 1;
+             transform: translateX(-50%) translateY($translate-y) scale($scale);
+           } 
+      
+           &:hover::after{
+            $translate-y: 0px;
+            $scale: 1;
+            transform: translateX(-50%) translateY($translate-y) scale($scale);
+      
+           }
+      
+           &::after{
+             content: '';
+             border: $arrow-size solid transparent;
+             border-top-color: $tooltip-color;
+             transform-origin: top center;
+           }
+        
+    }
+
+    
+}
+
+.map-info{
+    display: flex;
+    flex-direction: column;
+    
+    h2{
+        font-size: 2.6rem;
+    }
+    h5{
+        font-size: 2rem;
+    }
+    li{
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #333;
+        list-style-type: none;
+    }
+}
+
+.info-headings{
+    padding-bottom: 3rem;
+}
+.info-cities{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+   
+}
+
+
+// MAP END
+
+
+// @media screen and (max-width: 1050px) {
+//     .for-buttons{
+//         display: block;
+
+//     }
+
+//     .map-container{
+//         display: none;
+//     }
+//   }

@@ -197,4 +197,148 @@ html {
   -webkit-transform: translateX(-70%);
           transform: translateX(-70%);
 }
+
+.for-buttons {
+  display: none;
+}
+
+.map-layout-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+  padding-top: 10rem;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.map-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  max-width: 700px;
+  background-color: black;
+}
+
+.map-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #22001c;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 700px;
+  position: relative;
+}
+
+.map-wrapper img {
+  height: 480px;
+  width: 700px;
+}
+
+.map-wrapper .map-image {
+  font-size: 1.6rem;
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226534/dehradun_2_orsp7b.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90px;
+  width: 95px;
+  background-color: black;
+  opacity: 1;
+  position: absolute;
+  border-radius: 1rem;
+}
+
+.map-wrapper .map-image::before, .map-wrapper .map-image::after {
+  position: absolute;
+  top: -.25rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-100%) scale(0);
+          transform: translateX(-50%) translateY(-100%) scale(0);
+  -webkit-transition: 200ms -webkit-transform;
+  transition: 200ms -webkit-transform;
+  transition: 200ms transform;
+  transition: 200ms transform, 200ms -webkit-transform;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.map-wrapper .map-image::before {
+  content: attr(data-tooltip);
+  color: white;
+  padding: .5rem;
+  border-radius: .3rem;
+  background: #333;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.map-wrapper .map-image:hover::before {
+  -webkit-transform: translateX(-50%) translateY(-100%) scale(1);
+          transform: translateX(-50%) translateY(-100%) scale(1);
+}
+
+.map-wrapper .map-image:hover::after {
+  -webkit-transform: translateX(-50%) translateY(0px) scale(1);
+          transform: translateX(-50%) translateY(0px) scale(1);
+}
+
+.map-wrapper .map-image::after {
+  content: '';
+  border: 10px solid transparent;
+  border-top-color: #333;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
+.map-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.map-info h2 {
+  font-size: 2.6rem;
+}
+
+.map-info h5 {
+  font-size: 2rem;
+}
+
+.map-info li {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #333;
+  list-style-type: none;
+}
+
+.info-headings {
+  padding-bottom: 3rem;
+}
+
+.info-cities {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=style.css.map */
