@@ -205,14 +205,22 @@ html {
 .map-layout-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1.5fr 1fr;
-      grid-template-columns: 1.5fr 1fr;
+  -ms-grid-columns: 1.25fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
   padding-top: 10rem;
   margin: 0 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 1250px) {
+  .map-layout-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .map-container {
@@ -227,7 +235,6 @@ html {
           align-items: center;
   margin: 0 auto;
   max-width: 700px;
-  background-color: black;
 }
 
 .map-wrapper {
@@ -243,8 +250,8 @@ html {
 }
 
 .map-wrapper img {
-  height: 480px;
-  width: 700px;
+  height: 450px;
+  width: 680px;
 }
 
 .map-wrapper .map-image {
@@ -252,12 +259,83 @@ html {
   background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226534/dehradun_2_orsp7b.jpg");
   background-size: cover;
   background-position: center;
-  height: 90px;
-  width: 95px;
+  height: 70px;
+  width: 75px;
   background-color: black;
   opacity: 1;
   position: absolute;
   border-radius: 1rem;
+}
+
+.map-wrapper .map-image.loc-dehradun {
+  top: 30px;
+  left: 102px;
+}
+
+.map-wrapper .map-image.loc-noida {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226299/delhi_1_dbjy1r.jpg");
+  top: 14px;
+  left: 365px;
+}
+
+.map-wrapper .map-image.loc-indore {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 40px;
+  left: 450px;
+}
+
+.map-wrapper .map-image.loc-pune {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 100px;
+  left: 625px;
+}
+
+.map-wrapper .map-image.loc-mumbai {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 210px;
+  left: 550px;
+}
+
+.map-wrapper .map-image.loc-hyderabad {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 300px;
+  left: 620px;
+}
+
+.map-wrapper .map-image.loc-chennai {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 310px;
+  left: 455px;
+}
+
+.map-wrapper .map-image.loc-bangalore {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 380px;
+  left: 357px;
+}
+
+.map-wrapper .map-image.loc-ahmedabad {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 360px;
+  left: 96px;
+}
+
+.map-wrapper .map-image.loc-kota {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 270px;
+  left: 1px;
+}
+
+.map-wrapper .map-image.loc-gurgaon {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 200px;
+  left: 80px;
+}
+
+.map-wrapper .map-image.loc-delhi {
+  background-image: url("https://res.cloudinary.com/shubhamrangaa/image/upload/v1601226302/indore_1_zwaan2.jpg");
+  top: 105px;
+  left: 26px;
 }
 
 .map-wrapper .map-image::before, .map-wrapper .map-image::after {
@@ -314,7 +392,8 @@ html {
 }
 
 .map-info h2 {
-  font-size: 2.6rem;
+  font-size: 4.2rem;
+  line-height: 4.5rem;
 }
 
 .map-info h5 {
@@ -323,16 +402,17 @@ html {
 
 .map-info li {
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   color: #333;
   list-style-type: none;
+  line-height: 3.9rem;
 }
 
 .info-headings {
   padding-bottom: 3rem;
 }
 
-.info-cities {
+.info-cities ul {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -340,5 +420,21 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+  .info-cities ul {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .for-buttons {
+    display: block;
+  }
+  .map-container, .map-info {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
